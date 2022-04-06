@@ -16,13 +16,13 @@ function App() {
   }, []);
 
   return (
-    <li>
+    <ul>
       {locations.map((location) => (
         <li>
           {location.latitude} - {location.longitude}
         </li>
       ))}
-    </li>
+    </ul>
   );
 }
 

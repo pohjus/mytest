@@ -3,7 +3,7 @@ var mysql = require("mysql");
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("frontend/build"));
 
 const port = process.env.PORT || 8080;
 
