@@ -15,12 +15,13 @@ let config = {
   user: process.env.user,
   password: process.env.password,
   database: process.env.database,
+  connectionLimit: 10,
 };
 
-var connection = mysql.createConnection(config);
+var connection = mysql.createPool(config);
 
 app.get("/locations", (req, res) => {
-  connection.query("SElECT * FROM location", function (error, results) {
+  connection.pool("SElECT * FROM location", function (error, results) {
     if (error) throw error;
     res.send(results);
   });
