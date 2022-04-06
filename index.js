@@ -1,5 +1,6 @@
 const express = require("express");
 var mysql = require("mysql");
+require("dotenv").config();
 
 const app = express();
 
