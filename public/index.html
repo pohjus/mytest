@@ -13,7 +13,7 @@
             let hr = await fetch("/locations")
             let data = await hr.json()
             document.querySelector("ul").innerHTML =
-                data.map((loc) => `<li>${loc.latitude} - ${loc.longitude}</li>`).join()
+                data.map((loc) => `<li>${loc.latitude} - ${loc.longitude}</li>`).join("")
 
         })()
     </script>
