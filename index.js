@@ -18,10 +18,10 @@ let config = {
   connectionLimit: 10,
 };
 
-var connection = mysql.createPool(config);
+var pool = mysql.createPool(config);
 
 app.get("/locations", (req, res) => {
-  connection.pool("SElECT * FROM location", function (error, results) {
+  pool.query("SElECT * FROM location", function (error, results) {
     if (error) throw error;
     res.send(results);
   });
