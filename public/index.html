@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Page</title>
+</head>
+
+<body>
+    <ul></ul>
+    <script>
+        (async function () {
+            let hr = await fetch("/locations")
+            let data = await hr.json()
+            document.querySelector("ul").innerHTML =
+                data.map((loc) => `<li>${loc.latitude} - ${loc.longitude}</li>`).join()
+
+        })()
+    </script>
+</body>
+
+</html>
