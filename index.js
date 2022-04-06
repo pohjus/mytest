@@ -29,5 +29,4 @@ app.get("/locations", (req, res) => {
 
 const server = app.listen(port, () => {
   console.log(`Listening on port ${server.address().port}`);
-  connection.connect();
 });
